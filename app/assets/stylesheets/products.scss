@@ -40,17 +40,32 @@ main section.categories-show {
         transition: all 0.3s;
       }
 
-      aside.price {
-        position: absolute;
-        top: 0;
-        right: 0;
-        padding: 10px;
-        background-color: #eee;
-        border-top-right-radius: 4px;
-        border-bottom-left-radius: 20px;
-        font-size: 0.8em;
+      aside {
+        &.soldout {
+          position: absolute;
+          top: 0;
+          left: 0;
+          padding: 5px;
+          background-color: rgb(236, 170, 170);
+          border-top-right-radius: 4px;
+          border-bottom-right-radius: 15px;
+          color: white;
+          font-size: 1.0em;
+        }
+        &.price {
+          position: absolute;
+          top: 0;
+          right: 0;
+          padding: 10px;
+          background-color: #eee;
+          border-top-right-radius: 4px;
+          border-bottom-left-radius: 20px;
+          font-size: 0.8em;
+        }  
       }
 
+
+      
       &:hover {
 
         border-color: #999;

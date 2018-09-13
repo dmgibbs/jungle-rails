@@ -1,0 +1,17 @@
+<h1>Admin::Categories#new</h1>
+<p>Find me in app/views/admin/categories/new.html.erb</p>
+
+
+ <div class="well">
+    <%= link_to 'All Categories', [:admin, :categories], class: 'btn btn-info' %>
+  </div>
+
+<%= form_for [:admin, @category ] do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+    <p>
+    <%= form.submit %>
+  </p>
+<% end %>
