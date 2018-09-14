@@ -10,6 +10,15 @@ Rails.application.routes.draw do
     post   :remove_item
   end
 
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
+   get '/signup' => 'users#new'
+   post '/users' => 'users#create'
+   get '/show'   => 'users#show'
+  
+  # resource  :users
   resources :orders, only: [:create, :show]
 
   namespace :admin do
@@ -21,7 +30,7 @@ Rails.application.routes.draw do
 
 
 
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
