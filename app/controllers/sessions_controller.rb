@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
       redirect_to '/'
     else
     # If user's login doesn't work, send them back to the login form.
-      redirect_to '/login'
+      redirect_to '/login' ,flash: {error: "There was an error with username/password. Please retry"}
     end
   end
 
