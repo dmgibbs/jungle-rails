@@ -39,6 +39,20 @@ class ApplicationController < ActionController::Base
     redirect_to '/login' unless current_user
   end
 
+  protected
+
+    def authenticate
+      puts  " got into authentiuc routine"
+      authenticate_or_request_with_http_basic do |username, password|
+      
+        # APP_CONFIG['USERNAME'] == username
+        # && password == "book"  #-- this works.
+         APP_CONFIG['USERNAME'] ==   username  && APP_CONFIG['PASSWORD'] == password
+    end
+  end
+
+
+
 
 
 end
