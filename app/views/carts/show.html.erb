@@ -49,7 +49,9 @@
     </div>
   </div>
 <% else  %>
-    <h1> This cart is empty, please place one or more items before checking out ! </h1>
-    <a link_to = "/" Home </a>>
+    <h2> This cart is empty, please select one or more items before attempting to checking out! </h2>
+    <a link_to = "Home"> </a>
+      <%= link_to "Home", root_path, class: 'btn btn-lg btn-primary' %>
+
 <% end %>
 </section>

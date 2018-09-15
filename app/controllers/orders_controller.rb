@@ -42,6 +42,8 @@ class OrdersController < ApplicationController
       stripe_charge_id: stripe_charge.id, # returned by stripe
     )
 
+ 
+
     enhanced_cart.each do |entry|
       product = entry[:product]
       quantity = entry[:quantity]
@@ -53,6 +55,8 @@ class OrdersController < ApplicationController
       )
     end
     order.save!
+    UserMailer.order_confirmation(order.email, order).deliver_now
+    # puts 
     order
   end
 
