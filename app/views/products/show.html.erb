@@ -23,6 +23,14 @@
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
+          <dt>Reviews </dt>
+          <dd>
+          <% @product.reviews.each do |p| %>
+             R: <%= p.rating %>
+             id:<%= p.user_id%>
+             <% end %>
+          </dd>
+          
           <dt>Add a review:</dt>
           <%= form_for  ([ @product, @product.reviews.build ]) do |form| %>
             <%= form.text_area :description, size: "40x12" %>

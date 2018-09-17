@@ -35,7 +35,6 @@ class ApplicationController < ActionController::Base
       @current_user ||= User.find_by(id: session[:user_id]) 
     end
   end
-
   helper_method :current_user
 
   def authorize
@@ -45,11 +44,8 @@ class ApplicationController < ActionController::Base
   protected
 
     def authenticate
-      puts  " got into authentiuc routine"
+
       authenticate_or_request_with_http_basic do |username, password|
-      
-        # APP_CONFIG['USERNAME'] == username
-        # && password == "book"  #-- this works.
          APP_CONFIG['USERNAME'] ==   username  && APP_CONFIG['PASSWORD'] == password
     end
   end

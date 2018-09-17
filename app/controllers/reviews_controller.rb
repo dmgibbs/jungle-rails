@@ -14,7 +14,6 @@ class ReviewsController < ApplicationController
     @review = @product.reviews.create(review_params)
     @review.user_id = current_user.id
     @review.product_id = @product.id
-    
     if @review.save
       flash[:success] = "Thank you for your review of this item!  "
       redirect_to '/'
