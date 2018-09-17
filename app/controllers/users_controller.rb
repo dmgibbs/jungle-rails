@@ -14,6 +14,7 @@ class UsersController < ApplicationController
       redirect_to '/'
       # Handle a successful save.
     else
+      
       redirect_to  '/signup', flash: {error: "There was an error with signing up. Please retry."}
     end
   end

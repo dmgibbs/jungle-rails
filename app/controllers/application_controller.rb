@@ -31,8 +31,11 @@ class ApplicationController < ActionController::Base
 
 
   def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    if session[:user_id]
+      @current_user ||= User.find_by(id: session[:user_id]) 
+    end
   end
+
   helper_method :current_user
 
   def authorize
@@ -50,9 +53,5 @@ class ApplicationController < ActionController::Base
          APP_CONFIG['USERNAME'] ==   username  && APP_CONFIG['PASSWORD'] == password
     end
   end
-
-
-
-
 
 end

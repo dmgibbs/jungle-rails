@@ -29,6 +29,11 @@ cat1 = Category.find_or_create_by! name: 'Apparel'
 cat2 = Category.find_or_create_by! name: 'Electronics'
 cat3 = Category.find_or_create_by! name: 'Furniture'
 
+## REVIEWS
+Review.destroy_all
+
+Rating.destroy_all
+
 ## PRODUCTS
 
 puts "Re-creating Products ..."
@@ -131,6 +136,7 @@ cat3.products.create!({
   quantity: 23,
   price: 2_483.75
 })
+
 
 
 puts "DONE!"
