@@ -9,10 +9,12 @@
     <tr>
       <th>Categories</th>
     </tr>
+
+    <% render @categories %>
+    <h1>The List again<h1>
     <% @categories.each do |category| %>
       <tr>
         <td><%= category.name %></td>
-        
       </tr>
     <% end %>
   </table>
